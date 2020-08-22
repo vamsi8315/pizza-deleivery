@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  
+div {
+  background-image: url('staic/pizzahomepage.jpg');
+}
+a{
+  align-items: center;
+}
+</style>
+  
+</head>
+<body>
+
+  
+<div style="background-image: url('{% static 'images/pizzahomepage.jpg' %}');">
+<br><br><br>
+
+<div class="image">
+ <div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+   <div class="card">
+    
+    <div class="card-header text-center text-primary " >
+      <a href="{% url 'login' %}"  > login</a><br>
+      Register
+    </div>
+    <form action="{% url 'register' %}" method="POST">
+     {% csrf_token %}
+    <div class="card-body text-center">
+     {{form.as_p}}
+    </div>
+    <div class="card-footer text-center" ><button class="btn btn-primary">Signup</button></div>
+    </form>
+   </div>
+  </div>
+ </div>
+
+</div>
+</div>
+</body>
+</html>
